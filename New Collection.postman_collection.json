@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "0c1d1d3f-da3a-455c-8470-8af4bd041acd",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37561113"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\"operationName\":\"marksixResult\",\"query\":\"fragment lotteryDrawsFragment on LotteryDraw {\\n  id\\n  year\\n  no\\n  openDate\\n  closeDate\\n  drawDate\\n  status\\n  snowballCode\\n  snowballName_en\\n  snowballName_ch\\n  lotteryPool {\\n    sell\\n    status\\n    totalInvestment\\n    jackpot\\n    unitBet\\n    estimatedPrize\\n    derivedFirstPrizeDiv\\n    lotteryPrizes {\\n      type\\n      winningUnit\\n      dividend\\n    }\\n  }\\n  drawResult {\\n    drawnNo\\n    xDrawnNo\\n  }\\n}\\n\\nquery marksixResult($lastNDraw: Int, $startDate: String, $endDate: String, $drawType: LotteryDrawType) {\\n  lotteryDraws(\\n    lastNDraw: $lastNDraw\\n    startDate: $startDate\\n    endDate: $endDate\\n    drawType: $drawType\\n  ) {\\n    ...lotteryDrawsFragment\\n  }\\n}\",\"variables\":{\"lastNDraw\":10,\"drawType\":\"All\",\"startDate\":\"\",\"endDate\":\"2011130\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://info.cld.hkjc.com/graphql/base/",
+					"protocol": "https",
+					"host": [
+						"info",
+						"cld",
+						"hkjc",
+						"com"
+					],
+					"path": [
+						"graphql",
+						"base",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
