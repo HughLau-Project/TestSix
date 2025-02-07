@@ -1,5 +1,6 @@
+// src/index.ts
 import express from 'express';
-import { testConnection } from './db';
+import CsvManager from './CsvManager';
 
 const app = express();
 const port = 3333;
@@ -17,5 +18,7 @@ app.post('/api/echo', (req, res) => {
 
 app.listen(port, () => {
   console.log(`API is running at http://localhost:${port}`);
-  testConnection();
+
+  const csvManager = new CsvManager();
+  csvManager.cal();
 });
